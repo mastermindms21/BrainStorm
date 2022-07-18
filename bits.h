@@ -4,28 +4,17 @@
 
 typedef enum {F=0,T=1} bit;
 
-typedef struct {
-	bit b0;
-	bit b1;
-	bit b2;
-	bit b3;
-	bit b4;
-	bit b5;
-	bit b6;
-	bit b7;
-} byte;
-
-
-
 
 // This returns a T or F depending on the value of the input bit b
-char bval(bit b){
+char bitval(bit b){
 	if(b==F){
 		return 'F';
 	} else {
 		return 'T';
 	};
 }
+
+
 
 // Below are the bit operations
 // NOT returns a new bit with its value as the opposite of the input bit 
@@ -117,20 +106,83 @@ bit EQUAL(bit b1, bit b2){
 
 
 
-// Inequality operator
-bit NOTEQUAL(bit b1, bit b2){
-	bit out;
-	if(b1==b2){
-		out=F;
-	} else {
-		out=T;
-	};
+
+typedef struct {
+	bit b0:1;
+	bit b1:1;
+	bit b2:1;
+	bit b3:1;
+	bit b4:1;
+	bit b5:1;
+	bit b6:1;
+	bit b7:1;
+} byte;
+
+
+byte makebyte(bit b0, bit b1, bit b2, bit b3, bit b4, bit b5, bit b6, bit b7){
+	byte out;
+	out.b0=b0;
+	out.b1=b1;
+	out.b2=b2;
+	out.b3=b3;
+	out.b4=b4;
+	out.b5=b5;
+	out.b6=b6;
+	out.b7=b7;
 	return out;
 }
 
 
 
-
+byte INCREMENT(byte in){
+	byte out=in;
+	if(out.b0==0){
+		out.b0=1;
+		return out;
+	} else {
+		out.b0=0;
+	}
+	if(out.b1==0){
+		out.b1=1;
+		return out;
+	} else {
+		out.b1=0;
+	}
+	if(out.b2==0){
+		out.b2=1;
+		return out;
+	} else {
+		out.b2=0;
+	}
+	if(out.b3==0){
+		out.b3=1;
+		return out;
+	} else {
+		out.b3=0;
+	}
+	if(out.b4==0){
+		out.b4=1;
+		return out;
+	} else {
+		out.b4=0;
+	}
+	if(out.b5==0){
+		out.b5=1;
+		return out;
+	} else {
+		out.b5=0;
+	}
+	if(out.b6==0){
+		out.b6=1;
+		return out;
+	} else {
+		out.b6=0;
+	}
+	if(out.b7==0){
+		out.b7=1;
+		return out;
+	}
+}
 
 
 
