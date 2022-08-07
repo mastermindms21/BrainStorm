@@ -1,6 +1,6 @@
 #ifndef _BITS_H_
 #define _BITS_H_
-///  Bit manipulations implemented as arrays of boolean values
+///  Bit manipulations implemented as structs of boolean values
 
 
 /// Basic bit type, can be either F (0), or T (1)
@@ -21,6 +21,8 @@ typedef struct {
 
 /// This returns a T or F depending on the value of the input bit b
 char bitval(bit b);
+
+
 /// Below are the bit operations
 /// NOT returns a new bit with its value as the opposite of the input bit 
 bit NOT(bit b);
@@ -45,6 +47,10 @@ bit EQUAL(bit b1, bit b2);
 byte make_byte(bit b0, bit b1, bit b2, bit b3, bit b4, bit b5, bit b6, bit b7);
 
 byte *to_byte(char c);
+
+
+char *char2byte(unsigned char c);
+
 
 byte INCREMENT(byte in);
 

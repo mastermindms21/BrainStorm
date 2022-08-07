@@ -119,6 +119,20 @@ byte make_byte(bit b0, bit b1, bit b2, bit b3, bit b4, bit b5, bit b6, bit b7){
 
 
 
+// modified from source by user "Prelude" at https://cboard.cprogramming.com/c-programming/42817-convert-char-binary.html
+char *char2byte(unsigned char c){
+	static char bin[9] = {0};
+	int i;
+    for(i=7;i>=0;i--){
+		bin[i] = (c % 2) + '0';
+		c/=2;
+	}
+	return bin;
+}
+
+
+
+
 byte *to_byte(char c){
 	byte *out;
 	char buffer[9];
@@ -186,10 +200,6 @@ byte INCREMENT(byte in){
 		return out;
 	}
 }
-
-
-
-
 
 
 
