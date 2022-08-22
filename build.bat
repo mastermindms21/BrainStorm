@@ -1,7 +1,15 @@
-@echo off
-@echo Building...
-gcc -I./inc src/bits.c src/brainstorm.c -o bs.exe
+
+
+mingw32-make
 bs
 pause
+
+
+doxygen Doxyfile
+pause
+
+del bs.exe
+
+
 
 
