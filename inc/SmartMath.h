@@ -1,7 +1,7 @@
 #include <math.h>
 
 
-
+/// Euler's number to 6 decimal places
 double e=2.71828;
 
 

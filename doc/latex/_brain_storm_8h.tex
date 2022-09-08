@@ -1,0 +1,91 @@
+\hypertarget{_brain_storm_8h}{}\doxysection{inc/\+Brain\+Storm.h File Reference}
+\label{_brain_storm_8h}\index{inc/BrainStorm.h@{inc/BrainStorm.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{_brain_storm_8h_aa924e8c95bc498ebc9f8e08a0c491e7c}{sigmoid}} (double x)
+\begin{DoxyCompactList}\small\item\em Activation functions. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_brain_storm_8h_a0dfd40f6b6f706aaadb95482d803c337}{d\+Sigmoid}} (double x)
+\item 
+double \mbox{\hyperlink{_brain_storm_8h_a0d5cfc02be556e42a815caeb46679d44}{Re\+LU}} (double x)
+\item 
+double \mbox{\hyperlink{_brain_storm_8h_afdfe5dd22afc3ee551d50482c3dc3500}{Si\+LU}} (double x)
+\begin{DoxyCompactList}\small\item\em From \href{https://paperswithcode.com/method/silu}{\texttt{ https\+://paperswithcode.\+com/method/silu}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_brain_storm_8h_aac7cfbc75733773d28cddf65057fc231}{init\+\_\+weight}} ()
+\item 
+int \mbox{\hyperlink{_brain_storm_8h_a05848de25ac2dbec233935058a1d24b4}{init}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_brain_storm_8h_a0dfd40f6b6f706aaadb95482d803c337}\label{_brain_storm_8h_a0dfd40f6b6f706aaadb95482d803c337}} 
+\index{BrainStorm.h@{BrainStorm.h}!dSigmoid@{dSigmoid}}
+\index{dSigmoid@{dSigmoid}!BrainStorm.h@{BrainStorm.h}}
+\doxysubsubsection{\texorpdfstring{dSigmoid()}{dSigmoid()}}
+{\footnotesize\ttfamily double d\+Sigmoid (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8h_source_l00018}{18}} of file \mbox{\hyperlink{_brain_storm_8h_source}{Brain\+Storm.\+h}}.
+
+\mbox{\Hypertarget{_brain_storm_8h_a05848de25ac2dbec233935058a1d24b4}\label{_brain_storm_8h_a05848de25ac2dbec233935058a1d24b4}} 
+\index{BrainStorm.h@{BrainStorm.h}!init@{init}}
+\index{init@{init}!BrainStorm.h@{BrainStorm.h}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily int init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8h_source_l00043}{43}} of file \mbox{\hyperlink{_brain_storm_8h_source}{Brain\+Storm.\+h}}.
+
+\mbox{\Hypertarget{_brain_storm_8h_aac7cfbc75733773d28cddf65057fc231}\label{_brain_storm_8h_aac7cfbc75733773d28cddf65057fc231}} 
+\index{BrainStorm.h@{BrainStorm.h}!init\_weight@{init\_weight}}
+\index{init\_weight@{init\_weight}!BrainStorm.h@{BrainStorm.h}}
+\doxysubsubsection{\texorpdfstring{init\_weight()}{init\_weight()}}
+{\footnotesize\ttfamily double init\+\_\+weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8h_source_l00039}{39}} of file \mbox{\hyperlink{_brain_storm_8h_source}{Brain\+Storm.\+h}}.
+
+\mbox{\Hypertarget{_brain_storm_8h_a0d5cfc02be556e42a815caeb46679d44}\label{_brain_storm_8h_a0d5cfc02be556e42a815caeb46679d44}} 
+\index{BrainStorm.h@{BrainStorm.h}!ReLU@{ReLU}}
+\index{ReLU@{ReLU}!BrainStorm.h@{BrainStorm.h}}
+\doxysubsubsection{\texorpdfstring{ReLU()}{ReLU()}}
+{\footnotesize\ttfamily double Re\+LU (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8h_source_l00024}{24}} of file \mbox{\hyperlink{_brain_storm_8h_source}{Brain\+Storm.\+h}}.
+
+\mbox{\Hypertarget{_brain_storm_8h_aa924e8c95bc498ebc9f8e08a0c491e7c}\label{_brain_storm_8h_aa924e8c95bc498ebc9f8e08a0c491e7c}} 
+\index{BrainStorm.h@{BrainStorm.h}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!BrainStorm.h@{BrainStorm.h}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}}
+{\footnotesize\ttfamily double sigmoid (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Activation functions. 
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8h_source_l00013}{13}} of file \mbox{\hyperlink{_brain_storm_8h_source}{Brain\+Storm.\+h}}.
+
+\mbox{\Hypertarget{_brain_storm_8h_afdfe5dd22afc3ee551d50482c3dc3500}\label{_brain_storm_8h_afdfe5dd22afc3ee551d50482c3dc3500}} 
+\index{BrainStorm.h@{BrainStorm.h}!SiLU@{SiLU}}
+\index{SiLU@{SiLU}!BrainStorm.h@{BrainStorm.h}}
+\doxysubsubsection{\texorpdfstring{SiLU()}{SiLU()}}
+{\footnotesize\ttfamily double Si\+LU (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+From \href{https://paperswithcode.com/method/silu}{\texttt{ https\+://paperswithcode.\+com/method/silu}}. 
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8h_source_l00031}{31}} of file \mbox{\hyperlink{_brain_storm_8h_source}{Brain\+Storm.\+h}}.
+

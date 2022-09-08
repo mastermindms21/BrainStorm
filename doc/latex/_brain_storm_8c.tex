@@ -1,0 +1,104 @@
+\hypertarget{_brain_storm_8c}{}\doxysection{src/\+Brain\+Storm.c File Reference}
+\label{_brain_storm_8c}\index{src/BrainStorm.c@{src/BrainStorm.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Brain\+Storm.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbit__io__t}{bit\+\_\+io\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}}
+\item 
+typedef struct \mbox{\hyperlink{structbit__io__t}{bit\+\_\+io\+\_\+t}} $\ast$ \mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}} \mbox{\hyperlink{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}{b\+\_\+attach}} (FILE $\ast$f)
+\item 
+void \mbox{\hyperlink{_brain_storm_8c_adec1dc9727cd65ea42458ec880919b5f}{b\+\_\+write}} (\mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}} $\ast$buf, size\+\_\+t n\+\_\+bits, size\+\_\+t shift, \mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}} bf)
+\item 
+size\+\_\+t \mbox{\hyperlink{_brain_storm_8c_ab9224a28cf0b4658ed667fe7bc1360b5}{b\+\_\+read}} (\mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}} $\ast$buf, size\+\_\+t n\+\_\+bits, size\+\_\+t shift, \mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}} bf)
+\item 
+void \mbox{\hyperlink{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}{b\+\_\+detach}} (\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}} bf)
+\item 
+int \mbox{\hyperlink{_brain_storm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}\label{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}} 
+\index{BrainStorm.c@{BrainStorm.c}!bit\_filter@{bit\_filter}}
+\index{bit\_filter@{bit\_filter}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{bit\_filter}{bit\_filter}}
+{\footnotesize\ttfamily typedef  struct \mbox{\hyperlink{structbit__io__t}{bit\+\_\+io\+\_\+t}} $\ast$ \mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}}}
+
+\mbox{\Hypertarget{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}\label{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}} 
+\index{BrainStorm.c@{BrainStorm.c}!byte@{byte}}
+\index{byte@{byte}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}}}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8c_source_l00008}{8}} of file \mbox{\hyperlink{_brain_storm_8c_source}{Brain\+Storm.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}\label{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}} 
+\index{BrainStorm.c@{BrainStorm.c}!b\_attach@{b\_attach}}
+\index{b\_attach@{b\_attach}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{b\_attach()}{b\_attach()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}} b\+\_\+attach (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8c_source_l00015}{15}} of file \mbox{\hyperlink{_brain_storm_8c_source}{Brain\+Storm.\+c}}.
+
+\mbox{\Hypertarget{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}\label{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}} 
+\index{BrainStorm.c@{BrainStorm.c}!b\_detach@{b\_detach}}
+\index{b\_detach@{b\_detach}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{b\_detach()}{b\_detach()}}
+{\footnotesize\ttfamily void b\+\_\+detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}}}]{bf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8c_source_l00084}{84}} of file \mbox{\hyperlink{_brain_storm_8c_source}{Brain\+Storm.\+c}}.
+
+\mbox{\Hypertarget{_brain_storm_8c_ab9224a28cf0b4658ed667fe7bc1360b5}\label{_brain_storm_8c_ab9224a28cf0b4658ed667fe7bc1360b5}} 
+\index{BrainStorm.c@{BrainStorm.c}!b\_read@{b\_read}}
+\index{b\_read@{b\_read}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{b\_read()}{b\_read()}}
+{\footnotesize\ttfamily size\+\_\+t b\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}} $\ast$}]{buf,  }\item[{size\+\_\+t}]{n\+\_\+bits,  }\item[{size\+\_\+t}]{shift,  }\item[{\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}}}]{bf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8c_source_l00051}{51}} of file \mbox{\hyperlink{_brain_storm_8c_source}{Brain\+Storm.\+c}}.
+
+\mbox{\Hypertarget{_brain_storm_8c_adec1dc9727cd65ea42458ec880919b5f}\label{_brain_storm_8c_adec1dc9727cd65ea42458ec880919b5f}} 
+\index{BrainStorm.c@{BrainStorm.c}!b\_write@{b\_write}}
+\index{b\_write@{b\_write}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{b\_write()}{b\_write()}}
+{\footnotesize\ttfamily void b\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}} $\ast$}]{buf,  }\item[{size\+\_\+t}]{n\+\_\+bits,  }\item[{size\+\_\+t}]{shift,  }\item[{\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\+\_\+filter}}}]{bf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8c_source_l00023}{23}} of file \mbox{\hyperlink{_brain_storm_8c_source}{Brain\+Storm.\+c}}.
+
+\mbox{\Hypertarget{_brain_storm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_brain_storm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{BrainStorm.c@{BrainStorm.c}!main@{main}}
+\index{main@{main}!BrainStorm.c@{BrainStorm.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_brain_storm_8c_source_l00093}{93}} of file \mbox{\hyperlink{_brain_storm_8c_source}{Brain\+Storm.\+c}}.
+

@@ -1,0 +1,122 @@
+\hypertarget{_brain_storm_8c_source}{}\doxysection{Brain\+Storm.\+c}
+\label{_brain_storm_8c_source}\index{src/BrainStorm.c@{src/BrainStorm.c}}
+\mbox{\hyperlink{_brain_storm_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00001}00001 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00002}00002 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00003}00003 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00004}00004 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_brain_storm_8h}{BrainStorm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00008}\mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{00008}} \textcolor{keyword}{typedef} uint8\_t \mbox{\hyperlink{_brain_storm_8c_ab8ef12fab634c171394422d0ee8baf94}{byte}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00009}\mbox{\hyperlink{structbit__io__t}{00009}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00010}\mbox{\hyperlink{structbit__io__t_aa065f30aa9f5f9a42132c82c787ee70b}{00010}}     FILE *\mbox{\hyperlink{structbit__io__t_aa065f30aa9f5f9a42132c82c787ee70b}{fp}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00011}\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{00011}}     uint32\_t \mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00012}\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{00012}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00013}\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{00013}} \} \mbox{\hyperlink{structbit__io__t}{bit\_io\_t}}, *\mbox{\hyperlink{_brain_storm_8c_a389f3bebfea62c9c308784c75571093f}{bit\_filter}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00015}\mbox{\hyperlink{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}{00015}} \mbox{\hyperlink{structbit__io__t}{bit\_filter}} \mbox{\hyperlink{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}{b\_attach}}(FILE *f)}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00017}00017     \mbox{\hyperlink{structbit__io__t}{bit\_filter}} b = malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbit__io__t}{bit\_io\_t}}));}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00018}00018     b-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}} = b-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}} = 0;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00019}00019     b-\/>\mbox{\hyperlink{structbit__io__t_aa065f30aa9f5f9a42132c82c787ee70b}{fp}} = f;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00020}00020     \textcolor{keywordflow}{return} b;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00023}\mbox{\hyperlink{_brain_storm_8c_adec1dc9727cd65ea42458ec880919b5f}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_brain_storm_8c_adec1dc9727cd65ea42458ec880919b5f}{b\_write}}(\textcolor{keywordtype}{byte} *buf, \textcolor{keywordtype}{size\_t} n\_bits, \textcolor{keywordtype}{size\_t} shift, \mbox{\hyperlink{structbit__io__t}{bit\_filter}} bf)}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00025}00025     uint32\_t accu = bf-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00026}00026     \textcolor{keywordtype}{int} bits = bf-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00028}00028     buf += shift / 8;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00029}00029     shift \%= 8;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00031}00031     \textcolor{keywordflow}{while} (n\_bits || bits >= 8) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00032}00032         \textcolor{keywordflow}{while} (bits >= 8) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00033}00033             bits -\/= 8;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00034}00034             fputc(accu >> bits, bf-\/>\mbox{\hyperlink{structbit__io__t_aa065f30aa9f5f9a42132c82c787ee70b}{fp}});}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00035}00035             accu \&= (1 << bits) -\/ 1;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00036}00036         \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00037}00037         \textcolor{keywordflow}{while} (bits < 8 \&\& n\_bits) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00038}00038             accu = (accu << 1) | (((128 >> shift) \& *buf) >> (7 -\/ shift));}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00039}00039             -\/-\/n\_bits;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00040}00040             bits++;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00041}00041             \textcolor{keywordflow}{if} (++shift == 8) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00042}00042                 shift = 0;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00043}00043                 buf++;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00044}00044             \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00045}00045         \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00047}00047     bf-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}} = accu;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00048}00048     bf-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}} = bits;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00049}00049 \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00051}\mbox{\hyperlink{_brain_storm_8c_ab9224a28cf0b4658ed667fe7bc1360b5}{00051}} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_brain_storm_8c_ab9224a28cf0b4658ed667fe7bc1360b5}{b\_read}}(\textcolor{keywordtype}{byte} *buf, \textcolor{keywordtype}{size\_t} n\_bits, \textcolor{keywordtype}{size\_t} shift, \mbox{\hyperlink{structbit__io__t}{bit\_filter}} bf)}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00053}00053     uint32\_t accu = bf-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00054}00054     \textcolor{keywordtype}{int} bits = bf-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00055}00055     \textcolor{keywordtype}{int} mask, i = 0;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00057}00057     buf += shift / 8;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00058}00058     shift \%= 8;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00060}00060     \textcolor{keywordflow}{while} (n\_bits) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00061}00061         \textcolor{keywordflow}{while} (bits \&\& n\_bits) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00062}00062             mask = 128 >> shift;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00063}00063             \textcolor{keywordflow}{if} (accu \& (1 << (bits -\/ 1))) *buf |= mask;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00064}00064             \textcolor{keywordflow}{else} *buf \&= \string~mask;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00066}00066             n\_bits-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00067}00067             bits-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00069}00069             \textcolor{keywordflow}{if} (++shift >= 8) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00070}00070                 shift = 0;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00071}00071                 buf++;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00072}00072             \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00073}00073         \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00074}00074         \textcolor{keywordflow}{if} (!n\_bits) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00075}00075         accu = (accu << 8) | fgetc(bf-\/>\mbox{\hyperlink{structbit__io__t_aa065f30aa9f5f9a42132c82c787ee70b}{fp}});}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00076}00076         bits += 8;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00078}00078     bf-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}} = accu;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00079}00079     bf-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}} = bits;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00081}00081     \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00082}00082 \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00084}\mbox{\hyperlink{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}{00084}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}{b\_detach}}(\mbox{\hyperlink{structbit__io__t}{bit\_filter}} bf)}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00085}00085 \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00086}00086     \textcolor{keywordflow}{if} (bf-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}}) \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00087}00087         bf-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}} <<= 8 -\/ bf-\/>\mbox{\hyperlink{structbit__io__t_ad1e28a1a66a25529b0b61b9ca4e66d44}{bits}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00088}00088         fputc(bf-\/>\mbox{\hyperlink{structbit__io__t_a464a5054463f7506580a078be369365b}{accu}}, bf-\/>\mbox{\hyperlink{structbit__io__t_aa065f30aa9f5f9a42132c82c787ee70b}{fp}});}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00090}00090     free(bf);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00093}\mbox{\hyperlink{_brain_storm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00093}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_brain_storm_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00095}00095     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} s[] = \textcolor{stringliteral}{"{}abcdefghijk"{}};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00096}00096     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} s2[11] = \{0\};}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00097}00097     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00099}00099     FILE *f = fopen(\textcolor{stringliteral}{"{}test.bin"{}}, \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00100}00100     \mbox{\hyperlink{structbit__io__t}{bit\_filter}} b = \mbox{\hyperlink{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}{b\_attach}}(f);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00101}00101     \textcolor{comment}{/* for each byte in s, write 7 bits skipping 1 */}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00102}00102     \textcolor{keywordflow}{for} (i = 0; i < 10; i++) \mbox{\hyperlink{_brain_storm_8c_adec1dc9727cd65ea42458ec880919b5f}{b\_write}}(s + i, 7, 1, b);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00103}00103     \mbox{\hyperlink{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}{b\_detach}}(b);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00104}00104     fclose(f);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00106}00106     \textcolor{comment}{/* read 7 bits and expand to each byte of s2 skipping 1 bit */}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00107}00107     f = fopen(\textcolor{stringliteral}{"{}test.bin"{}}, \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00108}00108     b = \mbox{\hyperlink{_brain_storm_8c_aacebcc850d65f96f3d1726f800e37f18}{b\_attach}}(f);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00109}00109     \textcolor{keywordflow}{for} (i = 0; i < 10; i++) \mbox{\hyperlink{_brain_storm_8c_ab9224a28cf0b4658ed667fe7bc1360b5}{b\_read}}(s2 + i, 7, 1, b);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00110}00110     \mbox{\hyperlink{_brain_storm_8c_a932e5b2f88e9471a374f4c8c3c851205}{b\_detach}}(b);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00111}00111     fclose(f);}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00113}00113     printf(\textcolor{stringliteral}{"{}\%10s\(\backslash\)n"{}}, s2); \textcolor{comment}{/* should be the same first 10 bytes as in s */}}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00115}00115     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_brain_storm_8c_source_l00116}00116 \}}
+
+\end{DoxyCode}
